@@ -1,0 +1,36 @@
+
+html{
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.gallery{
+    container: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: none;
+    margin: none;
+    float: center;
+    
+
+    
+}
+.gallery img:hover{
+    border-radius:50%;
+    transition: 1s ease;
+}
+.gallery img{
+    transition: 1s ease;
+
+}
+
+img{
+    width: 18vw;
+    height: 48.5vh;
+
+}
+
