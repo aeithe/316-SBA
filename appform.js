@@ -91,3 +91,25 @@ const menuLinks = [
       mainEl.innerHTML = `<h1>${event.target.innerHTML}</h1>`;
     }
   });
+
+const form = document.createElement("form");
+form.setAttribute("method", "post");
+form.setAttribute("action", "submit.php");
+
+const contact = document.createElement("input");
+contact.setAttribute("type", "text");
+contact.setAttribute("name", "emailID");
+contact.setAttribute("placeholder", "E-Mail ID");
+form.append(contact);
+
+const yourName = document.createElement("input");
+yourName.setAttribute("type", "text");
+yourName.setAttribute("name", "FullName");
+yourName.setAttribute("placeholder", "Full Name");
+form.append(yourName);
+
+const submitButton = document.createElement("input");
+submitButton.setAttribute("type", "submit");
+submitButton.setAttribute("value", "submit");
+form.append(submitButton);
+document.getElementsByTagName("body").appendChild(form);

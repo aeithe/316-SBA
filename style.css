@@ -17,6 +17,13 @@ body {
   color: rgb(0, 0, 0);
 }
 
+main{
+  font-family: "Sacramento", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+}
+
 .flex-ctr {
   display: flex;
   justify-content: center;
@@ -62,4 +69,17 @@ nav a.active {
   color: var(--main-bg);
 }
 
+.gallery img:hover{
+  border-radius:50%;
+  transition: 1s ease;
+}
+.gallery img{
+  transition: 1s ease;
 
+}
+
+img{
+  width: 18vw;
+  height: 48.5vh;
+
+}
