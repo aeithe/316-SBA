@@ -91,3 +91,16 @@ const menuLinks = [
       mainEl.innerHTML = `<h1>${event.target.innerHTML}</h1>`;
     }
   });
+
+  const rightMouseClick = false; 
+  function mouseClicks (n){
+    if (n.button === 2){
+        rightMouseClick = true;
+        console.log("don't right click our images!!!!");
+    }
+    console.log(rightMouseClick);
+  }
+  document.addEventListener('mousedown', mouseClicks);
+  document.addEventListener('contextmenu', function(n){
+    n.preventDefault();
+  });
