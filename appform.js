@@ -1,28 +1,15 @@
 const menuLinks = [
     { text: "about", link: "about.html" },
-    {
-      text: "catalog",
-      link: "#",
-      subLinks: [
-        { text: "all", link: "allcakes.html" },
-        { text: "top selling", link: "topcakes.html" },
-      ],
-    },
-    {
-      text: "contact",
-      link: "#",
-      subLinks: [
+    {text: "catalog", link: "allcakes.html" },
+    { text: "top selling", link: "topcakes.html" },
         { text: "contact form", link: "contact_index.html" },
-        { text: "our contact info", link: "contactInfo.html" },
-      ],
-    },
-  ];
+        { text: "our contact info", link: "contactInfo.html" },];
   
   const mainEl = document.querySelector("main");
   
   mainEl.style.background = "var(--main-bg)";
 
-  mainEl.innerHTML = "<h1>let them eat cake;</h1>";
+//   mainEl.innerHTML = "<h1>let them eat cake;</h1>";
   mainEl.classList.add("flex-ctr");
   const topMenuEl = document.getElementById("top-menu");
   topMenuEl.style.height = "100%";
@@ -31,7 +18,9 @@ const menuLinks = [
   
   menuLinks.forEach((linkObj) => {
     const aEl = document.createElement("a");
-    aEl.setAttribute("link", linkObj.link);
+    aEl.setAttribute("href", linkObj.link);
+    aEl.setAttribute("target", "_blank");
+
     aEl.textContent = linkObj.text;
     topMenuEl.append(aEl);
   });
@@ -47,7 +36,7 @@ const menuLinks = [
   console.log(topMenuLinks);
   
   topMenuEl.addEventListener("click", (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     if (event.target.tagName !== "A") {
       return;
     } else {
@@ -75,14 +64,14 @@ const menuLinks = [
     subMenuEl.innerHTML = "";
     array.forEach((link) => {
       let aEl = document.createElement("a");
-      aEl.setAttribute("link", link.link);
+      aEl.setAttribute("href", link.link);
       aEl.innerHTML = link.text;
       subMenuEl.append(aEl);
     });
   }
   
   subMenuEl.addEventListener("click", (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     if (!event.target.matches("a")) {
       return;
     } else {

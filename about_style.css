@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* CSS Custom Properties */
+  :root {
+    --main-bg: #ffffff;
+    --top-menu-bg: #d174ff;
+    --sub-menu-bg: #f676ff74;
+  }
+  
+  body {
+    /* height: 100vh;
+    margin: 0; */
+    /* display: grid;
+    grid-template-rows: 3rem auto; */
+    color: rgb(0, 0, 0);
+    background-image: url(https://images.unsplash.com/photo-1568387188834-ff83d00b9915?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-repeat: no-repeat;
+    background-size: fill;
+  }
+  
+  main{
+    font-family: "Sacramento", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+  }
+  
+  .flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  nav a {
+    line-height: 3rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Major Mono Display", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  #top-menu a:hover {
+    background-color: var(--sub-menu-bg);
+  }
+  
+  header, #top-menu {
+    position: relative;
+  }
+  #top-menu {
+    z-index: 20;
+  }
+  #sub-menu {
+    width: 100%;
+    z-index: 10;
+    transition: top 0.5s ease-out;
+  }
+  #sub-menu a:hover {
+    background-color: var(--top-menu-bg);
+  }
+  nav a.active {
+    background-color: var(--sub-menu-bg);
+    color: var(--main-bg);
+  }
+  
+  .gallery img:hover{
+    border-radius:50%;
+    transition: 1s ease;
+  }
+  .gallery img{
+    transition: 1s ease;
+  
+  }
+  
+  video,img{
+    width: 18vw;
+    height: 48.5vh;
+  
+  }
+  
+  h1{
+    background-color: transparent;
+  }
