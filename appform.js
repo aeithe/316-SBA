@@ -102,3 +102,7 @@ submitButton.setAttribute("type", "submit");
 submitButton.setAttribute("value", "submit");
 form.append(submitButton);
 document.getElementsByTagName("body").appendChild(form);
+
+form.addEventListener("click", (event) =>{
+    if (event )
+});
