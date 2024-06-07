@@ -97,3 +97,18 @@ p{
   font-weight: 300;
   font-style: normal;
 }
+
+img:hover{
+  border-radius:50%;
+  transition: 1s ease;
+}
+img{
+  transition: 1s ease;
+
+}
+
+img{
+  width: 18vw;
+  height: 48.5vh;
+
+}
