@@ -9,9 +9,10 @@ const menuLinks = [
   
   mainEl.style.background = "var(--main-bg)";
 
-//   mainEl.innerHTML = "<h1>let them eat cake;</h1>";
-  mainEl.classList.add("flex-ctr");
+
+  
   const topMenuEl = document.getElementById("top-menu");
+  topMenuEl.classList.add("flex-ctr");
   topMenuEl.style.height = "100%";
   topMenuEl.style.background = "var(--top-menu-bg)";
   topMenuEl.classList.add("flex-around");
@@ -33,10 +34,10 @@ const menuLinks = [
   subMenuEl.style.top = "0";
   
   const topMenuLinks = document.querySelectorAll("a");
-  console.log(topMenuLinks);
+
   
   topMenuEl.addEventListener("click", (event) => {
-    // event.preventDefault();
+
     if (event.target.tagName !== "A") {
       return;
     } else {
@@ -70,39 +71,126 @@ const menuLinks = [
     });
   }
   
-  subMenuEl.addEventListener("click", (event) => {
-    // event.preventDefault();
-    if (!event.target.matches("a")) {
-      return;
-    } else {
-      subMenuEl.style.top = "0";
-      topMenuLinks.forEach((link) => link.classList.remove("active"));
-      mainEl.innerHTML = `<h1>${event.target.innerHTML}</h1>`;
+  const form = document.getElementById("form");
+  const name = form.elements["name"];
+  const email = form.elements["email"];
+  const zip = form.elements["zip"];
+  const country = form.elements["country"];
+  const password = form.elements["password"];
+  
+  form.addEventListener("submit", validate);
+
+  function validate(evt) {
+    const nameVal = validateName();
+    if (nameVal === false) {
+      evt.returnValue = false;
+      return false;
     }
-  });
+  
+    const emailVal = validateEmail();
+    if (emailVal === false) {
+      evt.returnValue = false;
+      return false;
+    }
+  
+    const zipVal = validateZip();
+    if (zipVal === false) {
+      evt.returnValue = false;
+      return false;
+    }
+  
+    const countryVal = validateCountry();
+    if (countryVal === false) {
+      evt.returnValue = false;
+      return false;
+    }
+  
+    const passwordVal = validatePassword();
+    if (passwordVal === false) {
+      evt.returnValue = false;
+      return false;
+    }
+  
+    alert(`Name: ${nameVal}
+  Email: ${emailVal}
+  Country: ${countryVal}
+  Zip Code: ${zipVal}
+  Password: ...that's a secret.`);
+  
+    return true;
+  }
+  function validateEmail() {
+    let emailVal = email.value;
+  
+    if (emailVal === "") {
+      alert("Please provide an email.");
+      email.focus();
+      return false;
+    }
+  
+    const atpos = emailVal.indexOf("@");
+    const dotpos = emailVal.lastIndexOf(".");
+  
+    if (atpos < 1) {
+      alert(
+        "Your email must include an @ symbol which must not be at the beginning of the email."
+      );
+      email.focus();
+      return false;
+    }
+  
+    if (dotpos - atpos < 2) {
+      alert(
+        "Invalid structure: @.\nYou must include a domain name after the @ symbol."
+      );
+      email.focus();
+      return false;
+    }
+  
+    return emailVal;
+  }
+  
+  function validateName() {
+    if (name.value === "") {
+      alert("Please provide a name.");
+      name.focus();
+      return false;
+    }
+    return name.value;
+  }
+  
+  function validatePassword() {
+    if (password.value === "") {
+      alert("Please provide a password.");
+      password.focus();
+      return false;
+    }
+    return password.value;
+  }
+  
+  function validateCountry() {
+    if (country.value === "") {
+      alert("Please provide a country.");
+      country.focus();
+      return false;
+    }
+    return country.value;
+  }
+  
+  function validateZip() {
+    if (zip.value === "") {
+      alert("Please provide a zip code.");
+      zip.focus();
+      return false;
+    }
+  
+    if (zip.value.length !== 5 || isNaN(Number(zip.value))) {
+      alert("Zip codes must be in the format #####.");
+      zip.focus();
+      return false;
+    }
+  
+    return zip.value;
+  }
+  
 
-const form = document.createElement("form");
-form.setAttribute("method", "post");
-form.setAttribute("action", "submit.php");
-
-const contact = document.createElement("input");
-contact.setAttribute("type", "text");
-contact.setAttribute("name", "emailID");
-contact.setAttribute("placeholder", "E-Mail ID");
-form.append(contact);
-
-const yourName = document.createElement("input");
-yourName.setAttribute("type", "text");
-yourName.setAttribute("name", "FullName");
-yourName.setAttribute("placeholder", "Full Name");
-form.append(yourName);
-
-const submitButton = document.createElement("input");
-submitButton.setAttribute("type", "submit");
-submitButton.setAttribute("value", "submit");
-form.append(submitButton);
-document.getElementsByTagName("body").appendChild(form);
-
-form.addEventListener("click", (event) =>{
-    if (event )
-});

@@ -3,7 +3,7 @@
   <head>
     <title>let them eat cake;</title>
     <meta charset="UTF-8" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="appformstyle.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300..700&family=Sacramento&display=swap" rel="stylesheet">
@@ -16,10 +16,24 @@
     </header>
     <main>
         <h1>if you fill this form out, we promise to maybe contact you; </h1>
-        <button>click here;</button>
-        <p class="forTheForm">
-
-        </p>
+      <form
+      action="javascript: alert('Success!');"
+      name="myForm"
+      method="POST"
+      id="form"
+    >
+      <input type="text" name="name" placeholder="Name" />
+      <input type="text" name="email" placeholder="Email" />
+      <input type="text" name="zip" placeholder="Zip Code" />
+      <select name="country">
+        <option value="">Select Country</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="UAE">UAE</option>
+      </select>
+      <input type="password" name="password" placeholder="Password" />
+      <input type="submit" value="Submit" />
+    </form>
     </main>
 
     <script src="appform.js"></script>

@@ -1,2 +1,2 @@
 # how to use
-click on the links to get taken to seperate web-pages that will have thier own functionality 
+this is a some-what functional website for a non-existing cake place

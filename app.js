@@ -9,7 +9,7 @@ const menuLinks = [
   
   mainEl.style.background = "var(--main-bg)";
 
-//   mainEl.innerHTML = "<h1>let them eat cake;</h1>";
+
   mainEl.classList.add("flex-ctr");
   const topMenuEl = document.getElementById("top-menu");
   topMenuEl.style.height = "100%";
@@ -32,10 +32,9 @@ const menuLinks = [
   subMenuEl.style.top = "0";
   
   const topMenuLinks = document.querySelectorAll("a");
-  console.log(topMenuLinks);
   
   topMenuEl.addEventListener("click", (event) => {
-    // event.preventDefault();
+    
     if (event.target.tagName !== "A") {
       return;
     } else {
@@ -70,7 +69,6 @@ const menuLinks = [
   }
   
   subMenuEl.addEventListener("click", (event) => {
-    // event.preventDefault();
     if (!event.target.matches("a")) {
       return;
     } else {
@@ -80,18 +78,7 @@ const menuLinks = [
     }
   });
 
-  const rightMouseClick = false; 
-  function mouseClicks (n){
-    if (n.button === 2){
-        rightMouseClick = true;
-        console.log("don't right click our images!!!!");
-    }
-    console.log(rightMouseClick);
-  }
-  document.addEventListener('mousedown', mouseClicks);
-  document.addEventListener('contextmenu', function(n){
-    n.preventDefault();
-  });
+
 
 document.addEventListener("click", myFunction1);
  
